@@ -1,0 +1,4 @@
+﻿  DubleConnList.cpp
+Zadanie1.obj : error LNK2019: ссылка на неразрешенный внешний символ "public: void __cdecl DubleConnList<char>::show(void)" (?show@?$DubleConnList@D@@QEAAXXZ) в функции main.
+Zadanie1.obj : error LNK2019: ссылка на неразрешенный внешний символ "public: void __cdecl DubleConnList<char>::clear(void)" (?clear@?$DubleConnList@D@@QEAAXXZ) в функции "public: __cdecl DubleConnList<char>::~DubleConnList<char>(void)" (??1?$DubleConnList@D@@QEAA@XZ).
+C:\Users\Denis\Desktop\Учеба\программы 2 курс\готовые\задание 1\x64\Debug\Zadanie1.exe : fatal error LNK1120: неразрешенных внешних элементов: 2
