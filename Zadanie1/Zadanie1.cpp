@@ -8,16 +8,16 @@ void DubleConnList<T>::Void()
 int main()
 {
 	system("chcp 1251");
-	DubleConnList<char> list;
+	DubleConnList<int> list;
 	cout << "Fist list\n";
-	list.add('a');
-	list.add('b');
-	list.add('c');
-	list.add('d');
-	list.add('e');
-	list.add('f');
+	list.add(77);
+	list.add(65);
+	list.add(34);
+	list.add(34);
+	list.add(4);
+	list.add(1);
 	list.show();
-	/*list.Void();
+	list.Void();
 	cout << "Reverse list\n";
 	list.reverse();
 	list.show();
@@ -69,7 +69,7 @@ int main()
 	cout << "list5\n";
 	list5.show();
 	cout << "list4\n";
-	list4.show();*/
+	list4.show();
 	return 0;
 }
 

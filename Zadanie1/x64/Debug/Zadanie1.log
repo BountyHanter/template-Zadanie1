@@ -1,4 +1,42 @@
 ﻿  DubleConnList.cpp
-Zadanie1.obj : error LNK2019: ссылка на неразрешенный внешний символ "public: void __cdecl DubleConnList<char>::show(void)" (?show@?$DubleConnList@D@@QEAAXXZ) в функции main.
-Zadanie1.obj : error LNK2019: ссылка на неразрешенный внешний символ "public: void __cdecl DubleConnList<char>::clear(void)" (?clear@?$DubleConnList@D@@QEAAXXZ) в функции "public: __cdecl DubleConnList<char>::~DubleConnList<char>(void)" (??1?$DubleConnList@D@@QEAA@XZ).
-C:\Users\Denis\Desktop\Учеба\программы 2 курс\готовые\задание 1\x64\Debug\Zadanie1.exe : fatal error LNK1120: неразрешенных внешних элементов: 2
+  Zadanie1.cpp
+C:\Users\denis\source\repos\template-Zadanie1\Zadanie1\DubleConnList.h(12,3): error C2664: "void DubleConnList<char>::add(const T &)": невозможно преобразовать аргумент 1 из "T" в "const T &"
+          with
+          [
+              T=char
+          ]
+          and
+          [
+              T=DubleConnList<int>
+          ]
+          and
+          [
+              T=char
+          ]
+C:\Users\denis\source\repos\template-Zadanie1\Zadanie1\DubleConnList.h(12,7): message : Причина: невозможно преобразовать "T" в "const T"
+          with
+          [
+              T=DubleConnList<int>
+          ]
+          and
+          [
+              T=char
+          ]
+C:\Users\denis\source\repos\template-Zadanie1\Zadanie1\DubleConnList.h(12,7): message : Для выполнения данного преобразования нет доступного оператора преобразования, определенного пользователем, или вызов оператора невозможен
+C:\Users\denis\source\repos\template-Zadanie1\Zadanie1\DubleConnList.h(29,7): message : см. объявление "DubleConnList<char>::add"
+C:\Users\denis\source\repos\template-Zadanie1\Zadanie1\DubleConnList.h(12,3): message : при попытке сопоставить список аргументов "(T)"
+          with
+          [
+              T=DubleConnList<int>
+          ]
+C:\Users\denis\source\repos\template-Zadanie1\Zadanie1\Zadanie1.cpp(41,14): message : выполняется компиляция ссылки на экземпляр шаблон функции "DubleConnList<char>::DubleConnList<DubleConnList<int>>(T)"
+          with
+          [
+              T=DubleConnList<int>
+          ]
+C:\Users\denis\source\repos\template-Zadanie1\Zadanie1\Zadanie1.cpp(41,8): message : выполняется компиляция ссылки на экземпляр шаблон функции "DubleConnList<char>::DubleConnList<DubleConnList<int>>(T)"
+          with
+          [
+              T=DubleConnList<int>
+          ]
+  Создание кода...
