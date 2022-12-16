@@ -7,7 +7,6 @@ void DubleConnList<T>::Void()
 }
 int main()
 {
-	system("chcp 1251");
 	DubleConnList<int> list;
 	cout << "Fist list\n";
 	list.add(77);

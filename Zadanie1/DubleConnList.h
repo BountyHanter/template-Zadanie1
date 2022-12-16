@@ -269,6 +269,5 @@ private:
 	}
 	Element* firstElement;
 	Element* lastElement;
-
 };
 
