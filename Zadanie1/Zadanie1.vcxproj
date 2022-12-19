@@ -139,7 +139,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="DubleConnList.cpp" />
     <ClCompile Include="Zadanie1.cpp" />
   </ItemGroup>
   <ItemGroup>

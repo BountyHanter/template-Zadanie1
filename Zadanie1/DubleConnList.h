@@ -1,4 +1,6 @@
-#pragma once
+п»ї//#ifndef TEMPLATE_FUNC_H
+//#define TEMPLATE_FUNC_H
+
 #include <iostream>
 using namespace std;
 template <typename T>
@@ -156,10 +158,10 @@ public:
 			Del = Del->ptrNextElement;
 			g++;
 		}
-		// доходим до элемента который ДО удаляемого 
+		// РґРѕС…РѕРґРёРј РґРѕ СЌР»РµРјРµРЅС‚Р° РєРѕС‚РѕСЂС‹Р№ Р”Рћ СѓРґР°Р»СЏРµРјРѕРіРѕ 
 		Element* PrevDel = Del->ptrPrevElement;
 		Element* AfterDel = Del->ptrNextElement;
-		// обозначаем элементы После и ДО удаляемого
+		// РѕР±РѕР·РЅР°С‡Р°РµРј СЌР»РµРјРµРЅС‚С‹ РџРѕСЃР»Рµ Рё Р”Рћ СѓРґР°Р»СЏРµРјРѕРіРѕ
 		if (PrevDel != 0 && PrevDel->ptrNextElement != 0)
 			PrevDel->ptrNextElement = AfterDel;
 		if (AfterDel != 0)
@@ -186,70 +188,42 @@ public:
 
 	DubleConnList(const DubleConnList& other)
 	{
-		Element* current_element1 = other.firstElement; /* создаем внутреннюю новую переменную типа Element(в котором есть 3 параметра - 2 указателя и символьный тип данных)
-		и засовывваем туда данные из первого элемента
+		Element* current_element1 = other.firstElement; /* Г±Г®Г§Г¤Г ГҐГ¬ ГўГ­ГіГІГ°ГҐГ­Г­ГѕГѕ Г­Г®ГўГіГѕ ГЇГҐГ°ГҐГ¬ГҐГ­Г­ГіГѕ ГІГЁГЇГ  Element(Гў ГЄГ®ГІГ®Г°Г®Г¬ ГҐГ±ГІГј 3 ГЇГ Г°Г Г¬ГҐГІГ°Г  - 2 ГіГЄГ Г§Г ГІГҐГ«Гї ГЁ Г±ГЁГ¬ГўГ®Г«ГјГ­Г»Г© ГІГЁГЇ Г¤Г Г­Г­Г»Гµ)
+		ГЁ Г§Г Г±Г®ГўГ»ГўГўГ ГҐГ¬ ГІГіГ¤Г  Г¤Г Г­Г­Г»ГҐ ГЁГ§ ГЇГҐГ°ГўГ®ГЈГ® ГЅГ«ГҐГ¬ГҐГ­ГІГ 
 		*/
 		while (current_element1)
 		{
-			add(current_element1->data); // далее вызываем функцию добавления в котором повторяем тоже самое что и с первым списком но копируем это во второй
-			current_element1 = current_element1->ptrNextElement; // и переносим наш элемент на следующий элемент, до тех пор пока наш элемент не равен MULL.
+			add(current_element1->data); // Г¤Г Г«ГҐГҐ ГўГ»Г§Г»ГўГ ГҐГ¬ ГґГіГ­ГЄГ¶ГЁГѕ Г¤Г®ГЎГ ГўГ«ГҐГ­ГЁГї Гў ГЄГ®ГІГ®Г°Г®Г¬ ГЇГ®ГўГІГ®Г°ГїГҐГ¬ ГІГ®Г¦ГҐ Г±Г Г¬Г®ГҐ Г·ГІГ® ГЁ Г± ГЇГҐГ°ГўГ»Г¬ Г±ГЇГЁГ±ГЄГ®Г¬ Г­Г® ГЄГ®ГЇГЁГ°ГіГҐГ¬ ГЅГІГ® ГўГ® ГўГІГ®Г°Г®Г©
+			current_element1 = current_element1->ptrNextElement; // ГЁ ГЇГҐГ°ГҐГ­Г®Г±ГЁГ¬ Г­Г Гё ГЅГ«ГҐГ¬ГҐГ­ГІ Г­Г  Г±Г«ГҐГ¤ГіГѕГ№ГЁГ© ГЅГ«ГҐГ¬ГҐГ­ГІ, Г¤Г® ГІГҐГµ ГЇГ®Г° ГЇГ®ГЄГ  Г­Г Гё ГЅГ«ГҐГ¬ГҐГ­ГІ Г­ГҐ Г°Г ГўГҐГ­ MULL.
 		}
 		std::cout << "start copy constructor " << this << std::endl;
 	}
-	void operator = (const DubleConnList& other) // в отличии от оператора копирования мы сначала зачищаем наш контейнер для того чтобы перенести в него новые значения
+	void operator = (const DubleConnList& other) // Гў Г®ГІГ«ГЁГ·ГЁГЁ Г®ГІ ГЄГ®Г­Г±ГІГ°ГіГЄГІГ®Г°Г  ГЄГ®ГЇГЁГ°Г®ГўГ Г­ГЁГї Г¬Г» Г±Г­Г Г·Г Г«Г  Г§Г Г·ГЁГ№Г ГҐГ¬ Г­Г Гё ГЄГ®Г­ГІГҐГ©Г­ГҐГ° Г¤Г«Гї ГІГ®ГЈГ® Г·ГІГ®ГЎГ» ГЇГҐГ°ГҐГ­ГҐГ±ГІГЁ Гў Г­ГҐГЈГ® Г­Г®ГўГ»ГҐ Г§Г­Г Г·ГҐГ­ГЁГї
 	{
+		clear();
 		std::cout << "Start assignment operator " << std::endl;
 		Element* current_element1 = other.firstElement;
-		while (firstElement) 
-		{
-			lastElement = firstElement->ptrNextElement;
-			delete firstElement;
-			firstElement = lastElement;
-		}
-		while (current_element1) // переписываем из копируемого контейнера данные в новый
+		while (current_element1) // ГЇГҐГ°ГҐГЇГЁГ±Г»ГўГ ГҐГ¬ ГЁГ§ ГЄГ®ГЇГЁГ°ГіГҐГ¬Г®ГЈГ® ГЄГ®Г­ГІГҐГ©Г­ГҐГ°Г  Г¤Г Г­Г­Г»ГҐ Гў Г­Г®ГўГ»Г©
 		{
 			add(current_element1->data);
 			current_element1 = current_element1->ptrNextElement;
 		}
 	}
-	DubleConnList(DubleConnList&& other) noexcept // перемещаем данные и зачищаем данные в перемещаемом контейнере
+	DubleConnList(DubleConnList&& other) noexcept // ГЇГҐГ°ГҐГ¬ГҐГ№Г ГҐГ¬ Г¤Г Г­Г­Г»ГҐ ГЁ Г§Г Г·ГЁГ№Г ГҐГ¬ Г¤Г Г­Г­Г»ГҐ Гў ГЇГҐГ°ГҐГ¬ГҐГ№Г ГҐГ¬Г®Г¬ ГЄГ®Г­ГІГҐГ©Г­ГҐГ°ГҐ
 	{
-		Element* current_element1 = other.firstElement;
-		while (current_element1)
-		{
-			add(current_element1->data); // далее вызываем функцию добавления в котором повторяем тоже самое что и с первым списком но копируем это во второй
-			current_element1 = current_element1->ptrNextElement; // и переносим наш элемент на следующий элемент, до тех пор пока наш элемент не равен MULL.
-		}
-		std::cout << "start move constructor " << this << std::endl;
-		while (other.firstElement)
-		{
-			other.lastElement = other.firstElement->ptrNextElement;
-			other.firstElement = nullptr; // other.firstElement = nullptr равнозначно delete other.firstElement;
-			other.firstElement = other.lastElement;
-		}
+		firstElement = other.firstElement; // Г§Г¤ГҐГ±Гј Г¬Г» ГЇГ°Г®Г±ГІГ® ГЇГҐГ°ГҐГ¬ГҐГ№Г ГҐГ¬ ГіГЄГ Г§Г ГІГҐГ«ГЁ, Г­ГҐ Г­ГіГ¦Г­Г® Г§Г Г·ГЁГ№Г ГІГј Г­ГЁГ·ГҐГЈГ®
+		lastElement = other.lastElement;
+		other.firstElement = NULL; // Г  Г±ГІГ Г°Г»ГҐ ГіГЄГ Г§Г ГІГҐГ«ГЁ Г§Г Г­ГіГ«ГїГҐГ¬
+		other.lastElement = NULL;
 	}
-	void operator = (DubleConnList&& other) noexcept // зачищаем данные с контейнера в который перемещаем, перемещаем данные, и зачищаем перемещаемый контейнер
+	void operator = (DubleConnList&& other) noexcept // Г§Г Г·ГЁГ№Г ГҐГ¬ Г¤Г Г­Г­Г»ГҐ Г± ГЄГ®Г­ГІГҐГ©Г­ГҐГ°Г  Гў ГЄГ®ГІГ®Г°Г»Г© ГЇГҐГ°ГҐГ¬ГҐГ№Г ГҐГ¬, ГЇГҐГ°ГҐГ¬ГҐГ№Г ГҐГ¬ Г¤Г Г­Г­Г»ГҐ, ГЁ Г§Г Г·ГЁГ№Г ГҐГ¬ ГЇГҐГ°ГҐГ¬ГҐГ№Г ГҐГ¬Г»Г© ГЄГ®Г­ГІГҐГ©Г­ГҐГ°
 	{
-		std::cout << "Start move operator " << std::endl;
-		Element* current_element1 = other.firstElement;
-		while (firstElement)
-		{
-			lastElement = firstElement->ptrNextElement;
-			delete firstElement;
-			firstElement = lastElement;
-		}
-		while (current_element1)
-		{
-			add(current_element1->data); 
-			current_element1 = current_element1->ptrNextElement; 
-		}
-		while (other.firstElement)
-		{
-			other.lastElement = other.firstElement->ptrNextElement;
-			other.firstElement = nullptr; // other.firstElement = nullptr равнозначно delete other.firstElement;
-			other.firstElement = other.lastElement;
-		}
-
+		std::cout << "Start move operator " << std::endl; // Г§Г¤ГҐГ±Гј Г¬Г» ГІГ®Г«ГјГЄГ® Г§Г Г·ГЁГ№Г ГҐГ¬ ГЇГҐГ°ГўГ®Г­Г Г·Г Г«ГјГ­Г»Г© ГЄГ®Г­ГІГҐГ©Г­ГҐГ°, ГЇГҐГ°ГҐГ¬ГҐГ№Г ГҐГ¬ ГіГЄГ Г§Г ГІГҐГ«ГЁ, Г  Г±ГІГ Г°Г»ГҐ ГіГЄГ Г§Г ГІГҐГ«ГЁ Г§Г Г­ГіГ«ГїГҐГ¬
+		clear();
+		firstElement = other.firstElement;
+		lastElement = other.lastElement;
+		other.firstElement = NULL;
+		other.lastElement = NULL;
 	}
 private: 
 	struct Element
@@ -272,3 +246,4 @@ private:
 
 };
 
+//#endif // TEMPLATE_FUNC_H
